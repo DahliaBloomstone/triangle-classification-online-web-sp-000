@@ -13,6 +13,8 @@ end
 #define instance method kind that returns, as a symbol, its type:
 def kind
 if (side1 <= 0 || side2 <= 0 || side3 <= 0) || (side1 >= side2 + side3 || side2 >= side1 + side3 || side3 >= side1 + side2)
+#first: test if all sides are less than 0 or = to 0
+#second: triangle inequality principle 
 
 
 begin
