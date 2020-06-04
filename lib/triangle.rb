@@ -24,6 +24,7 @@ class Triangle
   end
   end
 
+  #custom error class, TriangleError that inherits from StandardError
   class TriangleError < StandardError
   end
 
