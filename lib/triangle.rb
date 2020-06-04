@@ -1,7 +1,7 @@
 class Triangle
 #Triangle class with three arguments on initialization, each argument is a length of one of three sides of a triangle.
   def initialize(side1, side2, side3)
-    @sides = []
+    @sides = [] #creates a new array of triangle sides 
     @sides << side1
     @sides << side2
     @sides << side3
