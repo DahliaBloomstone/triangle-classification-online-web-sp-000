@@ -1,5 +1,5 @@
 class Triangle
-#Triangle class with three arguments on initialization, each argument is a length of one of three sides of a triangle. 
+#Triangle class with three arguments on initialization, each argument is a length of one of three sides of a triangle.
   def initialize(side1, side2, side3)
     @sides = []
     @sides << side1
@@ -21,8 +21,6 @@ class Triangle
     end
   end
   end
-
-
 
   def valid?
     sum_one_two = @sides[0] + @sides[1]
