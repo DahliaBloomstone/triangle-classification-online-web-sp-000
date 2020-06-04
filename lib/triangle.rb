@@ -24,9 +24,9 @@ end
 #if pass validity tests, determine kind of triangle
 elsif side1 == side2 && side2 == side3 #equal sides
 :equilateral
-elsif side1 == side2 || side2 == side3 || side1 == side3
+elsif side1 == side2 || side2 == side3 || side1 == side3 #two sides equal 
 :isosceles
-elsif side1 != side2 && side2 != side3 && side1 != side3 #
+elsif side1 != side2 && side2 != side3 && side1 != side3 #no equal sides 
 :scalene
 
 end
