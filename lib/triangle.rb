@@ -1,45 +1,45 @@
+require 'pry'
+
 class Triangle
-#Triangle class with three arguments on initialization, each argument is a length of one of three sides of a triangle.
-attr_accessor :side1, :side2, :side3
+  # s1, s2, s3 are lengths of the 3 sides
+  attr_accessor :s1, :s2, :s3
 
-  def initialize(side1, side2, side3)
-    @sides = [] #creates a new array of triangle sides
-    @sides << side1 #triangle side 1 will be shovelled into new array of triangle sides
-    @sides << side2
-    @sides << side3
+  def initialize(s1, s2, s3)
+    @s1 = s1
+    @s2 = s2
+    @s3 = s3
   end
+# kind method
+#  compute 2 validity tests
+#  if all side lengths > 0, validity test 1 = true
+#  then yield to method to test triangle inequality spec
+#  sum of 2 sides > 3rd side; if true, continue with #kind method
+#  output kind of triangle
 
-#instance method kind that returns, as a symbol, its type.
   def kind
-    if valid?
-      if @sides.uniq.length == 1 #knows that equilateral have equal sides
-        return :equilateral
-      elsif @sides.uniq.length == 2 #knows that isosceles have last two sides equal
-        return :isosceles
-      else
-        return :scalene #knows that scale have no equal sides
-      end
-    else
-#raise custom error if triangle is invalid.
-      raise TriangleError
+      # first test for nonzero & nonnegative side lengths
+      # and test for "triangle inequality" principle
+    if  (s1 <= 0 || s2 <= 0 || s3 <= 0) ||
+        (s1 >= s2 + s3 || s2 >= s1 + s3 || s3 >= s1 + s2)
+        begin
+          raise TriangleError
+        #rescue TriangleError => error
+          puts error.message
+        end
+      # if pass validity tests, determine kind of triangle
+    elsif s1 == s2 && s2 == s3
+      :equilateral
+    elsif s1 != s2 && s2 != s3 && s1 != s3
+      :scalene
+    elsif s1 == s2 || s2 == s3 || s1 == s3
+      :isosceles
     end
-  end
-  end
+  end # kind method
 
-  #custom error class, TriangleError that inherits from StandardError
   class TriangleError < StandardError
-  end
-
-#define instance method valid? that returns if a triangle is valid.
-  def valid?
-    sum_one_two = @sides[0] + @sides[1]
-    sum_one_three = @sides[0] + @sides[2]
-    sum_two_three = @sides[1] + @sides[2]
-
-    if (@sides.none? {|side| side <= 0}) &&
-      (sum_one_two > @sides[2] && sum_one_three > @sides[1] && sum_two_three > @sides[0])
-      return true
-    else
-      return false
+    def message
+      "Not a valid triangle"
     end
   end
+
+end # class Triangle end
