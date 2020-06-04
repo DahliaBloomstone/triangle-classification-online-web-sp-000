@@ -25,6 +25,7 @@ class Triangle
   end
 
   class TriangleError < StandardError
+  end 
 
   def valid?
     sum_one_two = @sides[0] + @sides[1]
