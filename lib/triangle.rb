@@ -1,5 +1,7 @@
 class Triangle
 #Triangle class with three arguments on initialization, each argument is a length of one of three sides of a triangle.
+attr_accessor :side1, :side2, :side3
+
   def initialize(side1, side2, side3)
     @sides = [] #creates a new array of triangle sides
     @sides << side1 #triangle side 1 will be shovelled into new array of triangle sides
