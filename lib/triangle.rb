@@ -10,9 +10,9 @@ class Triangle
 #instance method kind that returns, as a symbol, its type.
   def kind
     if valid?
-      if @sides.uniq.length == 1 #knows that equilateral have equal sides 
+      if @sides.uniq.length == 1 #knows that equilateral have equal sides
         return :equilateral
-      elsif @sides.uniq.length == 2 #knows that isosceles have last two sides equal 
+      elsif @sides.uniq.length == 2 #knows that isosceles have last two sides equal
         return :isosceles
       else
         return :scalene #knows that scale have no equal sides 
@@ -28,7 +28,7 @@ class Triangle
   class TriangleError < StandardError
   end
 
-#define instance method valid? that returns if a triangle is valid. 
+#define instance method valid? that returns if a triangle is valid.
   def valid?
     sum_one_two = @sides[0] + @sides[1]
     sum_one_three = @sides[0] + @sides[2]
