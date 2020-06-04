@@ -3,11 +3,12 @@ class Triangle
 #3 sides of a triangle:
 attr_accessor :side1, :side2, :side3
 
+#initialize with three arguments:
 def initialize(side1, side2, side3)
-    @side1 = side1
-    @side2 = side2
-    @side3 = side3
-  end
+@side1 = side1
+@side2 = side2
+@side3 = side3
+end
 # kind method
 #  compute 2 validity tests
 #  if all side lengths > 0, validity test 1 = true
