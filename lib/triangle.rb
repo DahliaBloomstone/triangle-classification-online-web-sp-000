@@ -16,30 +16,30 @@ end
 #  sum of 2 sides > 3rd side; if true, continue with #kind method
 #  output kind of triangle
 
-  def kind
+def kind
       # first test for nonzero & nonnegative side lengths
       # and test for "triangle inequality" principle
-    if  (s1 <= 0 || s2 <= 0 || s3 <= 0) ||
-        (s1 >= s2 + s3 || s2 >= s1 + s3 || s3 >= s1 + s2)
-        begin
-          raise TriangleError
-        #rescue TriangleError => error
-          puts error.message
-        end
-      # if pass validity tests, determine kind of triangle
-    elsif s1 == s2 && s2 == s3
-      :equilateral
-    elsif s1 != s2 && s2 != s3 && s1 != s3
-      :scalene
-    elsif s1 == s2 || s2 == s3 || s1 == s3
-      :isosceles
-    end
-  end # kind method
+if  (s1 <= 0 || s2 <= 0 || s3 <= 0) ||
+(s1 >= s2 + s3 || s2 >= s1 + s3 || s3 >= s1 + s2)
+begin
+raise TriangleError
+#rescue TriangleError => error
+puts error.message
+end
+# if pass validity tests, determine kind of triangle
+elsif s1 == s2 && s2 == s3
+:equilateral
+elsif s1 != s2 && s2 != s3 && s1 != s3
+:scalene
+elsif s1 == s2 || s2 == s3 || s1 == s3
+:isosceles
+end
+end # kind method
 
-  class TriangleError < StandardError
-    def message
-      "Not a valid triangle"
-    end
-  end
+class TriangleError < StandardError
+def message
+"Not a valid triangle"
+end
+end
 
 end # class Triangle end
