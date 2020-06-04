@@ -7,7 +7,7 @@ class Triangle
     @sides << side3
   end
 
-#instance method that returns, as a symbol, its type. 
+#instance method that returns, as a symbol, its type.
   def kind
     if valid?
       if @sides.uniq.length == 1
