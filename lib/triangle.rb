@@ -1,10 +1,9 @@
 require 'pry'
-
 class Triangle
-  # s1, s2, s3 are lengths of the 3 sides
-  attr_accessor :s1, :s2, :s3
+#3 sides of a triangle:
+attr_accessor :side1, :side2, :side3
 
-  def initialize(s1, s2, s3)
+def initialize(side1, side2, side3)
     @s1 = s1
     @s2 = s2
     @s3 = s3
