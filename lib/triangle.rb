@@ -12,7 +12,7 @@ end
 
 #define instance method kind that returns, as a symbol, its type:
 def kind
-if (s1 <= 0 || s2 <= 0 || s3 <= 0) || (s1 >= s2 + s3 || s2 >= s1 + s3 || s3 >= s1 + s2)
+if (side1 <= 0 || side2 <= 0 || side3 <= 0) || (side1 >= side2 + side3 || side2 >= side1 + side3 || side3 >= side1 + side2)
 begin
 raise TriangleError
 #rescue TriangleError => error
