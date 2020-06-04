@@ -7,6 +7,7 @@ class Triangle
     @sides << side3
   end
 
+#instance method that returns, as a symbol, its type.
   def kind
     if valid?
       if @sides.uniq.length == 1
@@ -17,10 +18,13 @@ class Triangle
         return :scalene
       end
     else
+#raise custom error if triangle is invalid:
       raise TriangleError
     end
   end
   end
+
+  class TriangleError < StandardError
 
   def valid?
     sum_one_two = @sides[0] + @sides[1]
@@ -34,7 +38,5 @@ class Triangle
       return false
     end
   end
-
-class TriangleError < StandardError
 
 end
