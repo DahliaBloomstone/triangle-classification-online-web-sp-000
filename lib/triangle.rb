@@ -10,12 +10,12 @@ class Triangle
 #instance method kind that returns, as a symbol, its type.
   def kind
     if valid?
-      if @sides.uniq.length == 1
+      if @sides.uniq.length == 1 #knows that equilateral have equal sides 
         return :equilateral
-      elsif @sides.uniq.length == 2
+      elsif @sides.uniq.length == 2 #knows that isosceles have last two sides equal 
         return :isosceles
       else
-        return :scalene
+        return :scalene #knows that scale have no equal sides 
       end
     else
 #raise custom error if triangle is invalid.
