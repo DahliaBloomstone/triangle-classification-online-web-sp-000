@@ -15,7 +15,7 @@ class Triangle
       elsif @sides.uniq.length == 2 #knows that isosceles have last two sides equal
         return :isosceles
       else
-        return :scalene #knows that scale have no equal sides 
+        return :scalene #knows that scale have no equal sides
       end
     else
 #raise custom error if triangle is invalid.
