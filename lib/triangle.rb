@@ -23,7 +23,7 @@ elsif side1 == side2 && side2 == side3
 :equilateral
 elsif side1 != side2 && side2 != side3 && side1 != side3
 :scalene
-elsif s1 == s2 || s2 == s3 || s1 == s3
+elsif side1 == side2 || side2 == side3 || side1 == side3
 :isosceles
 end
 end
